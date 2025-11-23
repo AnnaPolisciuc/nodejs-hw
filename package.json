@@ -1,0 +1,32 @@
+{
+  "name": "nodejs-hw",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+  "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnnaPolisciuc/nodejs-hw.git"
+  },
+  "keywords": [],
+  "author": "Anna Polisciuc <annap00775@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnnaPolisciuc/nodejs-hw/issues"
+  },
+  "homepage": "https://github.com/AnnaPolisciuc/nodejs-hw#readme",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "pino-http": "^11.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.1",
+    "nodemon": "^3.1.11"
+  }
+}
