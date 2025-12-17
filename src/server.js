@@ -6,6 +6,7 @@ import { errorHandler } from "../src/middleware/errorHandler.js";
 import { logger } from "./middleware/logger.js";
 import { notFoundHandler } from "./middleware/notFoundHandler.js";
 import notesRoutes from "./routes/notesRoutes.js";
+import { errors } from "celebrate";
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.use(notesRoutes);
 
 
 app.use(notFoundHandler);
+app.use(errors());
 app.use(errorHandler);
 
 

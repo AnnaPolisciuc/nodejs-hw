@@ -1,16 +1,7 @@
 import { Note } from "../models/note.js";
 import createHttpError from 'http-errors';
 
-export const getAllNotes = async (req, res, next) => {
-  try {
-    const notes = await Note.find();
-    res.status(200).json(notes);
-  } catch (error) {
-    next(error);
-  }
-};
-
-export const getNotes = async (req, res) => {
+export const getAllNotes = async (req, res) => {
   const { page = 1, perPage = 10, tag, search } = req.query;
   const skip = (page - 1)*perPage;
 
