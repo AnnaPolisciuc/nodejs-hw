@@ -7,6 +7,7 @@ import { logger } from "./middleware/logger.js";
 import { notFoundHandler } from "./middleware/notFoundHandler.js";
 import notesRoutes from "./routes/notesRoutes.js";
 import { errors } from "celebrate";
+import cookieParser from "cookie-parser";
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
 app.use(logger);
 
 app.use(notesRoutes);
@@ -31,3 +33,5 @@ await connectMongoDB();
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+
