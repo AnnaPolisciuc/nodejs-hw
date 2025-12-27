@@ -12,6 +12,9 @@ import { errorHandler } from "./middleware/errorHandler.js";
 import authRoutes from "./routes/authRoutes.js";
 import notesRoutes from "./routes/notesRoutes.js";
 
+import userRoutes from './routes/userRoutes.js';
+
+
 dotenv.config();
 
 const app = express();
@@ -21,12 +24,16 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(logger);
 
+app.use('/uploads', express.static('uploads'));
+
 app.use(authRoutes);
 app.use(notesRoutes);
+app.use(userRoutes);
 
 app.use(notFoundHandler);
 app.use(errors());
 app.use(errorHandler);
+
 
 const PORT = process.env.PORT || 3000;
 
